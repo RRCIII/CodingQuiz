@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timed Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css"> 
+  </head>
+ <body> 
+    <header>
+        <h1 class = "title">View Highscores</h1>
+        <h1 class="time" style="text-align: right;">Time:</h1>
+    </header>
+        <section> 
+            <div class = "Start">
+                <h2 id= "CodingTitle">Coding Quiz Challenge</h2>
+                <p>Welcome to the Coding Quiz! This quiz is designed to test your knowledge of JavaScript,<br /> one of the most popular programming languages for web development. <br /> The quiz consists of 6 multiple-choice questions that cover various aspects of JavaScript. <br /> Are you ready to put your JavaScript skills to the test? Let's get started!</p>
+                <button id="start">Start Quiz</button>
+            </div>
+            <div class = "Q-card">    
+                <h2>What is the result of the following code snippet? :</h2>
+                <p>console.log(1 + "2" + 3);</p>
+                <ol>
+                    <li><button>'6'</button></li>
+                    <li><button>'123'</button></li>
+                    <li><button>"123"</button></li>
+                    <li><button>"15"</button></li>
+                </ol>
+                <h2>What is the syntax for declaring a variable in JavaScript? :</h2>
+                <ol>
+                    <li><button>variable x;</button></li>
+                    <li><button>var = x;</button></li>
+                    <li><button>var x;</button></li>
+                    <li><button>x = var</button></li>
+                </ol>
+                <h2>How do you write a single-line comment in JavaScript? :</h2>
+                <ol>
+                    <li><button>/* this is a comment */</button></li>
+                    <li><button>// This is a comment</button></li>
+                    <li><button># This is a comment</button></li>
+                    <li><button>'<-- This is a comment -->'</button></li>
+                </ol>
+                <h2>What is the correct way to check if a variable x is equal to the number 5 in JavaScript? :</h2>
+                <ol>
+                    <li><button>x == 5</button></li>
+                    <li><button> x === 5</button></li>
+                    <li><button> x = 5</button></li>
+                    <li><button>x !== 5 </button></li>
+                </ol>
+            </div>
+            <div>   
+                <h1 id="footer">All Done!</h2>
+                <h3 class = "final score">Your Final Score</h3>
+            </div>
+            <form>
+                <label for= "Initials" id= "title">Initials :</label>
+                <input placeholder=" "/>
+                <button id="submit">Submit</button>
+                <div>
+                   <hr /> 
+                  <h3 id="response"></h3>
+                </div>
+            </form> 
+        </section>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>
+  
