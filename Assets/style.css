@@ -1,7 +1,13 @@
-.time {
+.clock {
     position: relative;
     bottom: 60px;
-    right: 25px;
+    right: 45px;
     margin: 0;
 }
 
+.timer {
+    position: relative;
+    bottom: 95px;
+    right: 10px;
+    margin: 0; 
+} 
