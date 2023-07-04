@@ -1,21 +1,21 @@
-
 // const defined here via getElementById, querySelector to target HTML
-const startbtn = document.getElementById("start");
-const beginPage = document.querySelector(".begin-p");
-const hiddenQuestionsPage  = document.querySelector(".h-questions");
-const timeEl = document.getElementById("time");
-const answerBar = document.querySelector(".answer-key");
-const correctInc = document.getElementById("correct-incorrect");
-const resultsP = document.querySelector(".h-results");
-const fScore = document.getElementById("fin-score");
-const hsInitials = document.getElementById("all-res");
-const submitbtn = document.getElementById("submit");
-const hiddenScoresP = document.querySelector(".high-scores");
-const viewHsL = document.querySelector(".view-high-scores");
-const back = document.getElementById("back");
-const clear = document.getElementById("clear");
-const backToHScoreP= document.getElementById("view-highScores-link");
-const firstpage = document.getElementById("h-container");
+const startButton = document.getElementById('start-button');
+const startPage = document.querySelector('.start-page');
+const questionsPage = document.querySelector('.questions-page');
+const timerLeft = document.getElementById('timer');
+const answerBar = document.querySelector('.answer-bar');
+const correctOrWrong = document.getElementById('correct-or-wrong');
+const resultsPage = document.querySelector('main-results-page');
+const fScore = document.getElementById('final-score');
+const hsInitals = document.getElementById('fs');
+const submitBtn = document.getElementById('submit-hs');
+const highScoresPage = document.querySelector('.high-scores-page');
+const highScoresList = document.querySelector('.high-scores.list');
+const goBack = document.getElementById('back');
+const clearHs = document.getElementById('clear');
+const goToHsPage = document.getElementById('hs-link');
+const topBar = document.getElementById('top-bar-container');
+
 
 //Global scope variables are delacared here to be accessed for other f();
 let finalScore = 0;
