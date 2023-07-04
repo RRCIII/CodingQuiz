@@ -3,69 +3,78 @@
 
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Timed Coding Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css"> 
+    <link rel="stylesheet" href="./assets/css/style.css">  
+   <title>Timed Coding Quiz</title>
   </head>
  <body> 
-    <header>
-        <h1 class = "title">View Highscores</h1>
-        <h1 class = "clock" style="text-align: right;">Time:</h1>
-        <h1 class="timer" style="text-align: right;"></h1>
-    </header>
-        <section> 
-            <div id = "Start">
-                <h2 id= "CodingTitle">Coding Quiz Challenge</h2>
-                <p>Welcome to the Coding Quiz! This quiz is designed to test your knowledge of JavaScript,<br /> one of the most popular programming languages for web development. <br /> The quiz consists of 6 multiple-choice questions that cover various aspects of JavaScript. <br /> Are you ready to put your JavaScript skills to the test? Let's get started!</p>
-                <button id="start">Start Quiz</button>
+    
+    <!-- Header -->
+    <div id="top-bar-container">
+        <div class="top-bar">
+        <p id="hs-link">View High Scores</p>
+        <p id="time" style="text-align: right;">Time: 0</p>
+    </div>
+
+    <!-- Start the GAME -->
+       <div class="start-page">
+                <h1>Welcome USER! To the Coding Quiz Challenge</h1>
+            <div class="start-instructions">
+                <p>This quiz is designed to test your knowledge of JavaScript!  
+                 The quiz consists of 5 multiple-choice questions. See if you can beat the time!
+                 Are you ready to put your JavaScript skills to the test? Let's get started!
+                 OH! I almost forgot. For every question answered incorrectly, time will be deducted by 10 sec! Anyway, have fun USER!!!
+                </p>
             </div>
-            <div class = "Q-card">    
-                <h2>What is the result of the following code snippet? :</h2>
-                <p>console.log(1 + "2" + 3);</p>
-                <ol>
-                    <li><button>'6'</button></li>
-                    <li><button>'123'</button></li>
-                    <li><button>"123"</button></li>
-                    <li><button>"15"</button></li>
-                </ol>
-                <h2>What is the syntax for declaring a variable in JavaScript? :</h2>
-                <ol>
-                    <li><button>variable x;</button></li>
-                    <li><button>var = x;</button></li>
-                    <li><button>var x;</button></li>
-                    <li><button>x = var</button></li>
-                </ol>
-                <h2>How do you write a single-line comment in JavaScript? :</h2>
-                <ol>
-                    <li><button>/* this is a comment */</button></li>
-                    <li><button>// This is a comment</button></li>
-                    <li><button># This is a comment</button></li>
-                    <li><button>'<-- This is a comment -->'</button></li>
-                </ol>
-                <h2>What is the correct way to check if a variable x is equal to the number 5 in JavaScript? :</h2>
-                <ol>
-                    <li><button>x == 5</button></li>
-                    <li><button> x === 5</button></li>
-                    <li><button> x = 5</button></li>
-                    <li><button>x !== 5 </button></li>
-                </ol>
-            </div>
-            <div>   
-                <h1 id="footer">All Done!</h2>
-                <h3 class = "final score">Your Final Score</h3>
-            </div>
-            <form>
-                <label for = "Initials" id= "title">Initials :</label>
-                <input placeholder=" "/>
-                <button id="submit">Submit</button>
-                <div>
-                   <hr /> 
-                  <h3 id="response"></h3>
+            <button id="start-button">Start Quiz</button>
+        </div>
+
+    <!-- 5 Quesitons! -->
+            <div class="questions-page hide"></div>
+                <div id="question"> 
+                    <!-- listed questions located here  -->
+                </div>    
+                <div id="answers">
+                    <!-- buttons for the answers are located here -->
                 </div>
-            </form> 
-        </section>
-        <script src="./assets/script.js"></script>
+                <div class="answer-bar hide">
+                    <hr>  
+                    <p id="correct-or-incorrect">
+                        Correct!
+                    </p>
+                </div>        
+            </div>
+    
+    <!-- Results -->
+            <div class="main-results-page hide">   
+                <div Class="results-page">
+                    <div class="results-container">
+                        <h2>All Done!</h2>
+                        <p>Your Final Score: <span id ="final-score">22</span></p>
+                        <div class="final-results">
+                            <label for="fs">Enter Initials:</label>
+                            <input type="text" id="fs"/>
+                            <button id="submit">SUBMIT 'this'</button>
+                        </div>
+                    </div>    
+                </div>
+            <div>
+
+    <!-- View High Scores -->
+            <div class="high-scores-page hide">
+                <h2>High Scores</h2>
+                <div class="high-scores">
+                    <ul class="high-scores-list">
+                        <!-- scores listed here -->
+                    </ul>
+                </div>
+                <button id="back">BACK</button>
+                <button id="clear"> CLEAR! high score</button>
+            </div>
+        <script src="./js/5-Questions.js"></script>
+        <script src="./js/script.js"></script>
     </body>
-</html>
+</html>   
+
   
