@@ -181,7 +181,16 @@ for (let i = 0; i < loadHighScores.length; i++) {
   }
 }
 
+//display high scores page
+const displayHighScores = () => {
+    gameOver = true
 
+    resultsPage.classList.add("hide")
+    startPage.classList.add("hide")
+    questionsPage.ClassList.add("hide")
+
+
+}
 
 
 
