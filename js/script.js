@@ -189,12 +189,49 @@ const displayHighScores = () => {
     startPage.classList.add("hide")
     questionsPage.ClassList.add("hide")
 
+    highScoresPage.classList.remove('hide')
+    topBar.style.visibility = "hidden"
+    timerLeft.textContent = `Time: 0`
 
 }
 
+// clear high scores page
+const clearScore = () => {
+  highScoresArray = []
+  index = 1
 
+  // removes duplicate scores after clearing local storage
+  while (highScoresList.firstChild) {
+    highScoresList.removeChild(highScoresList.firstChild)
+  }
+    localStorage.clear("HighScore")
 
+}
 
+//set variables back to what they were, once the 'back' btn has been clicked
+const backToStart = () => {
+  gameOver = false
+  questionIndex = 0 
+  totalTime = 75
+  finalScore = 0
+  getInitials = " "
+  index = 1
+
+  renderStartPage ()
+}
+
+//after  clicking 'back', display start page.  
+const renderStartPage = () => {
+  highScoresPage.classList.add("hide")
+  startPage.classList.remove("hide")
+  topBar.style.visibility = "visible"
+  timerLeft.textContent = `Time: 0`
+}
+
+//get the local storage array to render from the start 
+getHighScore()
+
+//event listeners added here
 
 
 
