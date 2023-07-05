@@ -5,19 +5,19 @@ const questionsPage = document.querySelector('.questions-page');
 const timerLeft = document.getElementById('timer');
 const answerBar = document.querySelector('.answer-bar');
 const correctOrWrong = document.getElementById('correct-or-wrong');
-const resultsPage = document.querySelector('main-results-page');
+const resultsPage = document.querySelector('.main-results-page');
 const fScore = document.getElementById('final-score');
 const hsInitials = document.getElementById('fs');
 const submitBtn = document.getElementById('submit-hs');
 const highScoresPage = document.querySelector('.high-scores-page');
-const highScoresList = document.querySelector('.high-scores.list');
+const highScoresList = document.querySelector('.high-scores-list');
 const goBack = document.getElementById('back');
 const clearHs = document.getElementById('clear');
 const goToHsPage = document.getElementById('hs-link');
 const topBar = document.getElementById('top-bar-container');
 
 
-//Global scope variables are delacared here to be accessed for other f();
+// //Global scope variables are delacared here to be accessed for other f();
 let finalScore = 0;
 let gameOver = false; 
 let questionIndex = 0;
@@ -25,17 +25,17 @@ let totalTime = 75;
 // value declared as an open string for user to input initials
 let getInitials = " ";  
 let highScoresArray = [ ];  
-let index = 1;   
+let index = 1; 
 
 
-//Start timer
+// //Start timer
 const startTimeCount = () => {
-  let timer = setinterval(() => {
+  let timer = setInterval(() => {
     // conditions set if the game is not over
     if (!gameOver) {
       totalTime--;
       finalScore = totalTime
-      timerLeft.textContent = `Time: ${totalTime}`
+      timerLeft.innerText = `Time: ${totalTime}`
     }
     //conditions set if the game is over
     if (gameOver) {
@@ -45,70 +45,71 @@ const startTimeCount = () => {
     if (totalTime < 0) {
       clearInterval(timer)
       showScore()
-      timerLeft.textContent = `Time: 0 `
+      timerLeft.innerText = `Time: 0 `
     }
 
   }, 1000)
 };
 
-// starts the quiz
+// // starts the quiz
 const startQuiz = () => {
   startPage.classList.add('hide')// CSS declaration adding "hide" to the element startpage
   questionsPage.classList.remove('hide')
-  showquestions(questionIndex)
-  timer.textContent =`Time: ${totalTime}`
+  showQuestion(questionIndex)
+  timer.innerText =`Time: ${totalTime}`
   startTimeCount()
 }
 
 //show the questions 
-const showquestions = (index) => {
+const showQuestion = (index) => {
   const question = document.getElementById("question")
-  const answer = document.getElementById("answer")
+  const answers = document.getElementById("answers")
 
   if (questionIndex <= listedQuestions.length -1) {
       
-      question.innerHTML = `<h1>${listedQuestions[index].question}</h1>`
+      question.innerHTML = `<h1>${listedQuestions[index].question}</h1>`;
 
-      answer.innerHTML = 
-      `button class="btn" ${listedQuestions[index].options[0]}</button` 
-      `button class="btn" ${listedQuestions[index].options[1]}</button` 
-      `button class="btn" ${listedQuestions[index].options[2]}</button` 
-      `button class="btn" ${listedQuestions[index].options[3]}</button`
-      `button class="btn" ${listedQuestions[index].options[4]}</button` 
+      answers.innerHTML = 
+      `<button class="btn">${listedQuestions[index].options[0]}</button> 
+       <button class="btn">${listedQuestions[index].options[1]}</button> 
+       <button class="btn">${listedQuestions[index].options[2]}</button> 
+       <button class="btn">${listedQuestions[index].options[3]}</button>` 
+
       
       const buttons = document.querySelectorAll('.btn')
 
-      buttons.foreach(button => {
+      buttons.forEach(button => {
         button.addEventListener("click", checkAnswer)
       })
+  
   } else {
-    gameOver =true
-    showScore()
+    gameOver =true;
+    showScore();
   }
 } 
 
-//if the answer is correct or incorrect 
+// //if the answer is correct or incorrect 
 const checkAnswer = (event) => {
-  const answerClicked = event.target.textContent
+  const answerClicked = event.target.innerText;
 
-  if(answerClicked === listedQuestions[questionIndex].answer) {
-    correctOrWrong.textContent = "Correct!"
-    answerBar.classList.remove("hide")
+  if(answerClicked === listedQuestions[questionIndex].answers) {
+    correctOrWrong.innerText = "Correct!";
+    answerBar.classList.remove("hide");
 
-  } else if (answerClicked !== listedQuestions[questionIndex].answer) {
-    totalTime -= 10
-    correctOrWrong.textContent = "Wrong!"
-    answerBar.classList.remove("hide")
+  } else if (answerClicked !== listedQuestions[questionIndex].answers) {
+    totalTime -= 10;
+    correctOrWrong.innerText = "Wrong!";
+    answerBar.classList.remove("hide");
   } else {
-    gameover =true
-    showScore()
+    gameOver = true
+    showScore();
   }
 //display correct or wrong for 500 milliseconds after answering
   setTimeout(() => {
-    answerBar.classList.add("hide")
-    question++
-    showquestions(questionIndex)
-  }, 500)
+    answerBar.classList.add("hide");
+    questionIndex++
+    showQuestion(questionIndex);
+  }, 500);
 }
 
 //show Scores
@@ -116,7 +117,7 @@ var showScore = () =>{
     gameOver = true
     questionsPage.classList.add("hide")
     resultsPage.classList.remove("hide")
-    fScore.textContent = `${finalScore}`
+    fScore.innerText = `${finalScore}`
 }
 
 // creating high score w/ initals and final score
@@ -131,7 +132,7 @@ const createHighScore = () => {
     }
 
     // clear input field
-    hsInitials = " "
+    hsInitials.value = " "
 
     let hs = {
       getInitials,
@@ -149,13 +150,13 @@ const createHighScore = () => {
     // add high score to HTML with a for loop
     for ( let i = 0; i < highScoresArray.length; i++) {
         let highScoreli = document.createElement("li")
-        highScoreli.textContent = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
+        highScoreli.innerText = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
         highScoresList.appendChild(highScoreli)
         index++
     }
     
     saveHighScore();
-    displayHighScore();
+    displayHighScores();
   }
 
 //save high scores to local storage
@@ -174,7 +175,7 @@ const getHighScore = () => {
 //displays highscores from local storage and push back into the highscoresArray for initialization
 for (let i = 0; i < loadHighScores.length; i++) {
     let highScoreli = document.createElement("li")
-    highScoreli.textContent = `${index}. ${loadHighScores[i].getInitials} - ${loadHighScores[i].finalScore}`
+    highScoreli.innerText = `${index}. ${loadHighScores[i].getInitials} - ${loadHighScores[i].finalScore}`
     highScoresList.appendChild(highScoreli)
 
     highScoresArray.push(loadHighScores[i])
@@ -187,11 +188,11 @@ const displayHighScores = () => {
 
     resultsPage.classList.add("hide")
     startPage.classList.add("hide")
-    questionsPage.ClassList.add("hide")
+    questionsPage.classList.add("hide")
 
     highScoresPage.classList.remove('hide')
     topBar.style.visibility = "hidden"
-    timerLeft.textContent = `Time: 0`
+    timerLeft.innerText = `Time: 0`
 
 }
 
@@ -204,7 +205,7 @@ const clearScore = () => {
   while (highScoresList.firstChild) {
     highScoresList.removeChild(highScoresList.firstChild)
   }
-    localStorage.clear("HighScore")
+    localStorage.removeItem("HighScore")
 
 }
 
@@ -225,16 +226,16 @@ const renderStartPage = () => {
   highScoresPage.classList.add("hide")
   startPage.classList.remove("hide")
   topBar.style.visibility = "visible"
-  timerLeft.textContent = `Time: 0`
+  timerLeft.innerText = `Time: 0`
 }
 
 //get the local storage array to render from the start 
 getHighScore()
 
-//event listeners added here
+// //event listeners added here
 startButton.addEventListener("click", startQuiz)
 submitBtn.addEventListener("click", createHighScore)
-goBack.addEventListener("cick", backToStart)
+goBack.addEventListener("click", backToStart)
 goToHsPage.addEventListener("click", displayHighScores)
 clearHs.addEventListener("click", clearScore)
 
