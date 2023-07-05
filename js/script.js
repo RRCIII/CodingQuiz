@@ -7,7 +7,7 @@ const answerBar = document.querySelector('.answer-bar');
 const correctOrWrong = document.getElementById('correct-or-wrong');
 const resultsPage = document.querySelector('main-results-page');
 const fScore = document.getElementById('final-score');
-const hsInitals = document.getElementById('fs');
+const hsInitials = document.getElementById('fs');
 const submitBtn = document.getElementById('submit-hs');
 const highScoresPage = document.querySelector('.high-scores-page');
 const highScoresList = document.querySelector('.high-scores.list');
@@ -23,7 +23,7 @@ let gameOver = false;
 let questionIndex = 0;
 let totalTime = 75;
 // value declared as an open string for user to input initials
-let initials = " ";  
+let getInitials = " ";  
 let highScoresArray = [ ];  
 let index = 1;   
 
@@ -111,155 +111,50 @@ const checkAnswer = (event) => {
   }, 500)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// show scores 
-const showScore = () => {
+//show Scores
+var showScore = () =>{
     gameOver = true
-    hiddenQuestionsPage.classList.add("hide")
-    resultsP.classList.remove("hide")
-    fScore.textContent = `${finalScore}.`
+    questionsPage.classList.add("hide")
+    resultsPage.classList.remove("hide")
+    fScore.textContent = `${finalScore}`
 }
 
-//highScore w/ initials
-  const createHscore = () => {
-    initials = hsInitials.value 
-// input box is empty
-    if(!initials) {
-    alert("Please enter initials")
-// exits the fxn using return 
-    return 
-  }
-// clears the input field  
-  hsInitials.value = " "
-   
+// creating high score w/ initals and final score
 
-  let hs = {
-    initials, 
-    finalScore
-  }
+const createHighScore = () => {
+    getInitials = hsInitials.value
 
-// push to the highScoresArray
-  highScoresArray.push(hs)
-
-//preventing duplicate high scores to be displayed 
-  while (viewHsL.firstchild) {
-  viewHsL.removeChild(viewHsL.firstchild)
-  }
-
-//Loop to HTML to add hs 
-  for (let i = 0; i < highScoresArray.length; i++) {
-    let highscoreLi = document.createElement("li");
-    highscoreLi.textContent = `${index}. ${highScoresArray[i].initials} - ${highScoresArray[i].finalScore}`;
-    viewHsL.appendChild(highscoreLi);
-  }
-
-  saveHScore();
-  displayHScore();
-
-};
-
-//save high score to local storage 
-const saveHScore = () => {
-  localStorage.setItem("HScore", JSON.stringify(highScoresArray))
-}
-
-// high Scores loaded from local Storage
-const getHScore = () => {
-  let loadHScore = JSON.parse(localStorage.getItem("HScore"))
-
-  if (!loadHScore) {
-    return false
-  }
-//retrieve hs fro local storage to display and push into high scores array to renderd initially
-  for(let i = 0; i <loadHScore.length; i ++) {
-    let highScoreLi = document.createElement("li")
-    highScoreLi.textContent = `${index}. ${loadHScore[i].initials} - ${loadHScore[i].finalScore}`
-    viewHsL.appendChild(highScoreLi)
-
-    highScoresArray.push(loadHScore[i])
-  }
-};
-
-//display high scores 
-const displayHScore = () => {
-  gameOver = true 
-
-  resultsP.classList.add("hide")
-  beginPage.classList.add("hide")
-  hiddenQuestionsPage.classList.add("hide")
-
-  hiddenScoresP.classList.remove("hide")
-  firstpage.style.visibility = "hidden"
-  timeEl.textContet = `Time: 0` 
-}
-
-//clear high scores 
-const clearScore = () => {
-    highScoresArray= []
-    index= 1 
-
-//removes high scores after clearing the local storage 
-    while (viewHsL.firstChild) {
-      viewHsL.removeChild(viewHsL.firstChild)
+    // if input box is empty
+    if (!getInitials) {
+      alert ("Please enter initials")
+      return 
     }
 
-    localStorage.clear("HScore")
-};
+    // clear input field
+    hsInitials = " "
 
-//reset variables when clicking on goback
-const BackToStart = () => {
-  gameOver = false
-  currentQuestionIndex = 0;
-  iTimer= 75;
-  finalScore = 0;
-  initials = " ";  
-  index = 1;   
-  
-  renderbeginPage()
-}
+    let hs = {
+      getInitials,
+      finalScore
+    }
 
-//render beginning page after clicking goback
-const renderbeginPage = () => {
-   resultsP.classList.add("hide")
-   beginPage.classList.remove("hide")
-   firstpage.style.visibility = "visible"
-   timeEl.textContent = `Time: 0`
-}
+    //push to high scores array
+    highScoresArray.push(hs)
 
-// get local starage array to render from the beginning page
-getHScore()
+    //prevents duplicated scores of the first child
 
-//EventListners added here
-startbtn.addEventListener("click", startQ);
-submitbtn.addEventListener("click", createHscore);
-back.addEventListener("click", BackToStart);
-clear.addEventListener("click", clearScore);
-backToHScoreP.addEventListener("click", displayHScore);
+    for ( let i = 0; i < highScoresArray.length; i++) {
+        let highScoreli = document.createElement("li")
+        highScoreli.textContent = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
+        highScoresList.appendChild(highScoreli)
+        index++
+    }
+    
+    saveHighScore();
+    displayHighScore();
+  }
 
-
-
-
-
-
-
+//save high scores to local storage
 
 
 
