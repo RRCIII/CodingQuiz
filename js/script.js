@@ -53,7 +53,7 @@ const startTimeCount = () => {
 
 // starts the quiz
 const startQuiz = () => {
-  startPage.classList.add('hide')// CSS declaration adding a hide to element startpage
+  startPage.classList.add('hide')// CSS declaration adding "hide" to the element startpage
   questionsPage.classList.remove('hide')
   showquestions(questionIndex)
   timer.textContent =`Time: ${totalTime}`
@@ -159,10 +159,27 @@ const createHighScore = () => {
   }
 
 //save high scores to local storage
+const saveHighScore = () => {
+  localStorage.setItem("HighScore", JSON.stringify(highScoresArray))
+}
+//get High scores loaded from local storage
+const getHighScore = () => {
+  let loadHighScores = JSON.parse(localStorage.getItem("HighScore"))
 
+  // condition if not localstorage.getItem, return false
+  if(!loadHighScores) {
+      return false
+  }
 
+//displays highscores from local storage and push back into the highscoresArray for initialization
+for (let i = 0; i < loadHighScores.length; i++) {
+    let highScoreli = document.createElement("li")
+    highScoreli.textContent = `${index}. ${loadHighScores[i].getInitials} - ${loadHighScores[i].finalScore}`
+    highScoresList.appendChild(highScoreli)
 
-
+    highScoresArray.push(loadHighScores[i])
+  }
+}
 
 
 
