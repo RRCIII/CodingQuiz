@@ -88,32 +88,45 @@ const showquestions = (index) => {
 } 
 
 //if the answer is correct or incorrect 
-const checkAns = (event) => {
-  const ansClicked = event.target.textContent
-// if answer is correct
-  if(ansClicked === listedQuestions[currentQuestionIndex].correctAns) {
-      correctInc.textContent = "Correct!"
-      answerBar.classList.remove("hide")
-     
-//if answer is incorrect
-  } else if (ansClicked !== listedQuestions[currentQuestionIndex].correctAns){
-      iTimer -= 10
-      correctInc.textContent = "Incorrect!"
-      answerBar.classList.remove("hide")     
+const checkAnswer = (event) => {
+  const answerClicked = event.target.textContent
+
+  if(answerClicked === listedQuestions[questionIndex].answer) {
+    correctOrWrong.textContent = "Correct!"
+    answerBar.classList.remove("hide")
+
+  } else if (answerClicked !== listedQuestions[questionIndex].answer) {
+    totalTime -= 10
+    correctOrWrong.textContent = "Wrong!"
+    answerBar.classList.remove("hide")
   } else {
-    gameOver= true;
-    showScore();
-   
+    gameover =true
+    showScore()
   }
+//display correct or wrong for 500 milliseconds after answering
+  setTimeout(() => {
+    answerBar.classList.add("hide")
+    question++
+    showquestions(questionIndex)
+  }, 500)
+}
 
-// display correct or wrong for 500 milliseconds after answering
-   setTimeout(() => {
-    answerBar.classList.add('hide')
-    currentQuestionIndex++
-    showQues(currentQuestionIndex)
-}, 500)
 
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
