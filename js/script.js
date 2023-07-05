@@ -20,48 +20,39 @@ const topBar = document.getElementById('top-bar-container');
 //Global scope variables are delacared here to be accessed for other f();
 let finalScore = 0;
 let gameOver = false; 
-let currentQuestionIndex = 0;
-let iTimer = 75;
+let QuestionIndex = 0;
+let totalTime = 75;
 // value declared as an open string for user to input initials
 let initials = " ";  
 let highScoresArray = [ ];  
 let index = 1;   
 
-const startTimer = () => {
-     let timer = setInterval(() => {
-      if (!gameOver) { 
-        iTimer--
-        finalScore = iTimer;
-        timeEl.textContent = `Time: ${iTimer}` 
-      }
-      if (gameOver) {
-//stops the time
-        clearInterval(timer);
-        
-      }
-      if (iTimer < 0) {
-        clearInterval(timer);
-        showScore();
-        timeEl.textContent = `Time : 0`
-       
-      }
 
-    }, 1000)
-  }
+//Start timer
+const startTimer = () => {
+  let timer = setinterval(() => {
+    // conditions set if the game is not over
+    if (!gameOver) {
+      totalTime--;
+      finalScore = totalTime
+      timerLeft.textContent = `Time: ${totalTime}`
+    }
+    //conditions set if the game is over
+    if (gameOver) {
+      clearInterval(timer)
+    }
+    // conditions set if the time less than 0
+    if (totalTime < 0) {
+      clearInterval(timer)
+      showScore()
+      timerLeft.textContent = `Time: 0 `
+    }
+
+  }, 1000)
+};
 
 // starts the quiz
 
-const startQ = () => {
-//classlist adds the CSS 'hide' to the 'begin' element, hiding begin from the UI
-    beginPage.classList.add("hide") 
-//removes hide from the hq element to display for the User.
-    hiddenQuestionsPage.classList.remove("hide")
-// shows questions with specified index
-    showQues(currentQuestionIndex)
-// displays time followed by the value of the tTimer variable. 
-    timeEl.textContent = `Time: ${iTimer}`
-    startTimer()
-};
 
 //show the questions 
 const showQues = (index) => {
