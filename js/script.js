@@ -55,38 +55,37 @@ const startTimeCount = () => {
 const startQuiz = () => {
   startPage.classList.add('hide')// CSS declaration adding a hide to element startpage
   questionsPage.classList.remove('hide')
-  showquestions(quesitonIndex)
+  showquestions(questionIndex)
   timer.textContent =`Time: ${totalTime}`
   startTimeCount()
 }
 
 //show the questions 
-const showQues = (index) => {
+const showquestions = (index) => {
   const question = document.getElementById("question")
-  const answers = document.getElementById("answers")
-// if true, there are more questions to displayed
-  if (currentQuestionIndex <= listedQuestions.length - 1) {
-      question.innerHTML =`<h1>${listedQuestions[index].Q}</h1>`
+  const answer = document.getElementById("answer")
 
-      answers.innerHTML = `
-      <button class="btn">${listedQuestions[index].ans[0]}</button>
-      <button class="btn">${listedQuestions[index].ans[1]}</button>
-      <button class="btn">${listedQuestions[index].ans[2]}</button>
-      <button class="btn">${listedQuestions[index].ans[3]}</button>
-    `
-        
-        
-      const buttons = document.querySelectorAll(".btn")
-          buttons.forEach(button => {
-          button.addEventListener("click", checkAns)
-      });
+  if (questionIndex <= listedQuestions.length -1) {
+      
+      question.innerHTML = `<h1>${listedQuestions[index].question}</h1>`
+
+      answer.innerHTML = 
+      `button class=btn ${listedQuestions[index].options[0]}</button` 
+      `button class=btn ${listedQuestions[index].options[1]}</button` 
+      `button class=btn ${listedQuestions[index].options[2]}</button` 
+      `button class=btn ${listedQuestions[index].options[3]}</button`
+      `button class=btn ${listedQuestions[index].options[4]}</button` 
+      
+      const buttons = document.querySelectorAll('.btn')
+
+      buttons.foreach(button => {
+        button.addEventListener("click", checkAnswer)
+      })
   } else {
-        gameOver= true;
-        showScore();
-        
-  }  
-}
-
+    gameOver =true
+    showScore()
+  }
+} 
 
 //if the answer is correct or incorrect 
 const checkAns = (event) => {

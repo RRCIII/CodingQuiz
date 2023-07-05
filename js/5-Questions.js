@@ -1,6 +1,6 @@
 // object created w/ properties associated w/ 5-questions, answer arrays, and correct answers 
 
-const Listedquestions= [
+const listedquestions= [
     {
     question: "What is the correct way to check if a variable x is equal to the number 5 in JavaScript?",
     options: ["1. x = 5", "2. x == 5", "3. x === 5", "4. x !== 5" ],
