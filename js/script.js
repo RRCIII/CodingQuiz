@@ -70,11 +70,11 @@ const showquestions = (index) => {
       question.innerHTML = `<h1>${listedQuestions[index].question}</h1>`
 
       answer.innerHTML = 
-      `button class=btn ${listedQuestions[index].options[0]}</button` 
-      `button class=btn ${listedQuestions[index].options[1]}</button` 
-      `button class=btn ${listedQuestions[index].options[2]}</button` 
-      `button class=btn ${listedQuestions[index].options[3]}</button`
-      `button class=btn ${listedQuestions[index].options[4]}</button` 
+      `button class="btn" ${listedQuestions[index].options[0]}</button` 
+      `button class="btn" ${listedQuestions[index].options[1]}</button` 
+      `button class="btn" ${listedQuestions[index].options[2]}</button` 
+      `button class="btn" ${listedQuestions[index].options[3]}</button`
+      `button class="btn" ${listedQuestions[index].options[4]}</button` 
       
       const buttons = document.querySelectorAll('.btn')
 
