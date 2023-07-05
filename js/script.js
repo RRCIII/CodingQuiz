@@ -232,7 +232,11 @@ const renderStartPage = () => {
 getHighScore()
 
 //event listeners added here
-
+startButton.addEventListener("click", startQuiz)
+submitBtn.addEventListener("click", createHighScore)
+goBack.addEventListener("cick", backToStart)
+goToHsPage.addEventListener("click", displayHighScores)
+clearHs.addEventListener("click", clearScore)
 
 
 
