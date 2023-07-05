@@ -142,7 +142,11 @@ const createHighScore = () => {
     highScoresArray.push(hs)
 
     //prevents duplicated scores of the first child
+    while (highScoresList.firstchild) {
+      highScoresList.removeChild(highScoresList.firstChild)
+    }
 
+    // add high score to HTML with a for loop
     for ( let i = 0; i < highScoresArray.length; i++) {
         let highScoreli = document.createElement("li")
         highScoreli.textContent = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
