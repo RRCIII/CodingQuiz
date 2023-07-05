@@ -20,7 +20,7 @@ const topBar = document.getElementById('top-bar-container');
 //Global scope variables are delacared here to be accessed for other f();
 let finalScore = 0;
 let gameOver = false; 
-let QuestionIndex = 0;
+let questionIndex = 0;
 let totalTime = 75;
 // value declared as an open string for user to input initials
 let initials = " ";  
@@ -29,7 +29,7 @@ let index = 1;
 
 
 //Start timer
-const startTimer = () => {
+const startTimeCount = () => {
   let timer = setinterval(() => {
     // conditions set if the game is not over
     if (!gameOver) {
@@ -52,7 +52,13 @@ const startTimer = () => {
 };
 
 // starts the quiz
-
+const startQuiz = () => {
+  startPage.classList.add('hide')// CSS declaration adding a hide to element startpage
+  questionsPage.classList.remove('hide')
+  showquestions(quesitonIndex)
+  timer.textContent =`Time: ${totalTime}`
+  startTimeCount()
+}
 
 //show the questions 
 const showQues = (index) => {
