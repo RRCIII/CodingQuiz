@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="./assets/css/style.css">  
    <title>Timed Coding Quiz</title>
   </head>
- <body> 
-    
-    <!-- Header -->
-    <div id="top-bar-container">
-        <div class="top-bar">
-        <p id="hs-link">View High Scores</p>
-        <p id="timer" style="text-align: right;">Time: 0</p>
-    </div>
+    <body>  
+        <!-- Header -->
+        <div id="top-bar-container">
+            <div class="top-bar">
+            <p id="hs-link">View High Scores</p>
+            <p id="timer" style="text-align: right;">Time: 0</p>
+        </div>
 
-    <!-- Start the GAME -->
+        <!-- Start the GAME -->
        <div class="start-page">
                 <h1>Welcome USER! To the Coding Quiz Challenge</h1>
             <div class="start-instructions">
@@ -30,12 +29,12 @@
             <button id="start-button">Start Quiz</button>
         </div>
 
-    <!-- 5 Quesitons! -->
-            <div class="questions-page hide"></div>
+        <!-- 5-Quesitons! -->
+            <div class="questions-page hide">
                 <div id="question"> 
                     <!-- listed questions located here  -->
                 </div>    
-                <div id="answers">
+                <div id="answers"> 
                     <!-- buttons for the answers are located here -->
                 </div>
                 <div class="answer-bar hide">
@@ -46,12 +45,12 @@
                 </div>        
             </div>
     
-    <!-- Results -->
+        <!-- Results -->
             <div class="main-results-page hide">   
                 <div Class="results-page">
                     <div class="results-container">
                         <h2>All Done!</h2>
-                        <p>Your Final Score: <span id ="final-score">22</span></p>
+                        <p>Your Final Score: <span id ="final-score">40</span></p>
                         <div class="final-results">
                             <label for="fs">Enter Initials:</label>
                             <input type="text" id="fs"/>
@@ -59,19 +58,20 @@
                         </div>
                     </div>    
                 </div>
-            <div>
+            </div>
 
-    <!-- View High Scores -->
+        <!-- View High Scores -->
             <div class="high-scores-page hide">
                 <h2>High Scores</h2>
                 <div class="high-scores">
-                    <ul class="high-scores-list">
-                        <!-- scores listed here -->
+                    <ul class="high-scores-list"> 
+        <!-- scores listed here -->
                     </ul>
                 </div>
                 <button id="back">BACK</button>
                 <button id="clear"> CLEAR! high score</button>
             </div>
+        
         <script src="./js/5-Questions.js"></script>
         <script src="./js/script.js"></script>
     </body>

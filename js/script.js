@@ -23,7 +23,7 @@ let gameOver = false;
 let questionIndex = 0;
 let totalTime = 75;
 // value declared as an open string for user to input initials
-let getInitials = " ";  
+let getInitials = '';  
 let highScoresArray = [ ];  
 let index = 1; 
 
@@ -56,7 +56,7 @@ const startQuiz = () => {
   startPage.classList.add('hide')// CSS declaration adding "hide" to the element startpage
   questionsPage.classList.remove('hide')
   showQuestion(questionIndex)
-  timer.innerText =`Time: ${totalTime}`
+  timerLeft.innerText =`Time: ${totalTime}`
   startTimeCount()
 }
 
@@ -113,7 +113,7 @@ const checkAnswer = (event) => {
 }
 
 //show Scores
-var showScore = () =>{
+const showScore = () =>{
     gameOver = true
     questionsPage.classList.add("hide")
     resultsPage.classList.remove("hide")
@@ -132,7 +132,7 @@ const createHighScore = () => {
     }
 
     // clear input field
-    hsInitials.value = " "
+    hsInitials.value = '';
 
     let hs = {
       getInitials,
@@ -143,20 +143,21 @@ const createHighScore = () => {
     highScoresArray.push(hs)
 
     //prevents duplicated scores of the first child
-    while (highScoresList.firstchild) {
+    while (highScoresList.firstChild) {
       highScoresList.removeChild(highScoresList.firstChild)
     }
 
     // add high score to HTML with a for loop
     for ( let i = 0; i < highScoresArray.length; i++) {
         let highScoreli = document.createElement("li")
-        highScoreli.innerText = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
-        highScoresList.appendChild(highScoreli)
-        index++
+          highScoreli.innerText = `${index}. ${highScoresArray[i].getInitials} - ${highScoresArray[i].finalScore}`
+          highScoresList.appendChild(highScoreli)
+          index++
     }
     
     saveHighScore();
     displayHighScores();
+    
   }
 
 //save high scores to local storage
@@ -191,7 +192,7 @@ const displayHighScores = () => {
     questionsPage.classList.add("hide")
 
     highScoresPage.classList.remove('hide')
-    topBar.style.visibility = "hidden"
+    topBar.style.visibility = "visibile"
     timerLeft.innerText = `Time: 0`
 
 }
@@ -205,7 +206,7 @@ const clearScore = () => {
   while (highScoresList.firstChild) {
     highScoresList.removeChild(highScoresList.firstChild)
   }
-    localStorage.removeItem("HighScore")
+    localStorage.clear("HighScore")
 
 }
 
@@ -215,7 +216,7 @@ const backToStart = () => {
   questionIndex = 0 
   totalTime = 75
   finalScore = 0
-  getInitials = " "
+  getInitials = '';
   index = 1
 
   renderStartPage ()
@@ -238,7 +239,6 @@ submitBtn.addEventListener("click", createHighScore)
 goBack.addEventListener("click", backToStart)
 goToHsPage.addEventListener("click", displayHighScores)
 clearHs.addEventListener("click", clearScore)
-
 
 
 

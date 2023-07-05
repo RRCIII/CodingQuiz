@@ -21,10 +21,10 @@ const listedQuestions = [
     answers: "2. 123"
   },
     { 
-    quesiton: "Which keyword is used to declare a constant variable in JavaScript?:",
+    question: "Which keyword is used to declare a constant variable in JavaScript?:",
     options: ["1. var", "2. let","3. const", "4. final"],
     answers: "3. const"
   }
   
-  ]
+]
   
