@@ -1,3 +1,8 @@
+## Decription 
+
+The goal of this project was to display a quiz that allows the user to challenge there javascript knowledge. In doing so, the user will have an alloted time to complete the quiz and if wrong answers were selected the user would be penelized -10 secs off the clock/score. When the quiz has been completed and the game is over, the user is prompted to provide their initials, that correlates to there score. The user's final score is then saved if the clear button has not been clicked, and stored for further viewing to compare their progress. The user interface (UI) should work smoothly and with ease, negating all bugs encountered by the developer. The user may also click on the View High Scores link located at the top right of the page to directly view their previous scores. All-in-all, this project is a 'test' of resilience and adaptable learning (no matter how long it takes).  
+
+
 
 
 

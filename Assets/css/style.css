@@ -9,7 +9,7 @@
 
 /* BODY */
 body {
-    background-color: #fff;
+    background-color: #141212;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -28,7 +28,14 @@ body {
 
 .top-bar #hs-link {
     cursor: pointer;
-    color: rgb(217, 103, 251);
+    color: rgb(103, 251, 118);
+}
+
+#timer {
+    position: relative;
+    bottom: 55%;
+    color: rgb(103, 251, 118);
+
 }
 
 .top-bar p {
@@ -44,11 +51,16 @@ body {
 
 .start-page h1 {
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .start-instructions p:nth-child(2) {
     max-width: 480px;
     margin: 0 auto;
+}
+
+.start-instructions {
+    color:white;
 }
 
 .start-page button {
@@ -58,7 +70,7 @@ body {
     font-size: 1rem;
     border-radius: 0.2rem;
     border: none;
-    background-color: rgb(65, 13, 116);
+    background-color: rgb(56, 226, 232);
     color: #fff;
     transition: 0.15s ease-out;
 }
@@ -88,6 +100,10 @@ body {
     gap: 0.5rem;
 }
 
+#question h1 {
+    color: white;
+}
+
 .questions-page button {
     cursor: pointer;
     width: 200px;
@@ -96,7 +112,7 @@ body {
     font-size: 1rem;
     border-radius: 0.2rem;
     border: none;
-    background-color: rgb(65, 13, 116);
+    background-color: rgb(56, 226, 232);
     color: #fff;
     transition: 0.15s ease-out;
 }
@@ -112,7 +128,7 @@ body {
 .answer-bar {
     margin-top: 2.5rem;
     font-size: 1.8rem;
-    color: rgb(186, 186, 186);
+    color: rgb(223, 135, 220);
 }
 
 .answer-bar hr {
@@ -135,10 +151,12 @@ body {
 .results-page h2 {
     margin-top: 3rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .results-page p {
     margin-bottom: 1rem;
+    color: white;
 }
 
 .results-page .final-results {
@@ -160,7 +178,7 @@ body {
     font-size: 1rem;
     border-radius: 0.2rem;
     border: none;
-    background-color: rgb(65, 13, 116);
+    background-color: rgb(56, 226, 232);
     color: #fff;
     transition: 0.15s ease-out;
 }
@@ -173,6 +191,10 @@ body {
     transform: scale(0.92);
 }
 
+.final-results label {
+    color: white;
+}
+
 /* HIGH SCORES */
 .high-scores-page {
     max-width: 400px;
@@ -182,17 +204,19 @@ body {
 .high-scores-page h2{
     margin-top: 5rem;
     margin-bottom: 0.75rem;
+    color: white;
 }
 
 .high-scores-page ul {
     list-style-type: none;
+    color:white;
 }
 
 .high-scores-page li {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
     margin-bottom: 0.75rem;
-    background-color: rgb(227, 214, 236);
+    background-color: rgb(235, 214, 130);
 }
 
 .high-scores-page button {
@@ -201,7 +225,7 @@ body {
     font-size: 1rem;
     border: none;
     border-radius: 0.2rem;
-    background-color: rgb(65, 13, 116);
+    background-color: rgb(56, 226, 232);
     color: #fff;
     transition: 0.15s ease-out;
 }

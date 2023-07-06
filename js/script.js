@@ -19,7 +19,7 @@ const topBar = document.getElementById('top-bar-container');
 
 // //Global scope variables are delacared here to be accessed for other f();
 let finalScore = 0;
-let gameOver = false; 
+let fin = false; 
 let questionIndex = 0;
 let totalTime = 75;
 // value declared as an open string for user to input initials
@@ -32,13 +32,13 @@ let index = 1;
 const startTimeCount = () => {
   let timer = setInterval(() => {
     // conditions set if the game is not over
-    if (!gameOver) {
+    if (!fin) {
       totalTime--;
       finalScore = totalTime
       timerLeft.innerText = `Time: ${totalTime}`
     }
     //conditions set if the game is over
-    if (gameOver) {
+    if (fin) {
       clearInterval(timer)
     }
     // conditions set if the time less than 0
@@ -83,7 +83,7 @@ const showQuestion = (index) => {
       })
   
   } else {
-    gameOver =true;
+    fin =true;
     showScore();
   }
 } 
@@ -101,7 +101,7 @@ const checkAnswer = (event) => {
     correctOrWrong.innerText = "Wrong!";
     answerBar.classList.remove("hide");
   } else {
-    gameOver = true
+    fin = true
     showScore();
   }
 //display correct or wrong for 500 milliseconds after answering
@@ -185,7 +185,7 @@ for (let i = 0; i < loadHighScores.length; i++) {
 
 //display high scores page
 const displayHighScores = () => {
-    gameOver = true
+    fin = true
 
     resultsPage.classList.add("hide")
     startPage.classList.add("hide")
@@ -212,7 +212,7 @@ const clearScore = () => {
 
 //set variables back to what they were, once the 'back' btn has been clicked
 const backToStart = () => {
-  gameOver = false
+  fin = false
   questionIndex = 0 
   totalTime = 75
   finalScore = 0
