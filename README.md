@@ -29,13 +29,17 @@ THEN I can save my initials and my score
 
 
 ## Screenshots
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-1.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-2.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-3.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-4.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-5.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-6.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-7.png
+C:\Users\rando\CodingQuiz\TimedCodingQuiz\Assets\css\images\Screenshot-codingQuiz-8.png
 
-
-
-
-
-
-
+## Citation
+Students in the UNC fullstack coding bootcamp course  
 
 ## Link to Deployed Application
 
