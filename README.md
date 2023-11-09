@@ -36,21 +36,21 @@ THEN I can save my initials and my score
 
 ```
 
-<img width="550px" src="./images/Screenshot-codingQuiz-1.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-1.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-2.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-2.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-3.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-3.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-4.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-4.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-5.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-5.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-6.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-6.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-7.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-7.png">
 
-<img width="550px" src="./images/Screenshot-codingQuiz-8.png">
+<img width="300px" src="./images/Screenshot-codingQuiz-8.png">
 
 ## Credits
 
