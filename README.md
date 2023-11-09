@@ -9,7 +9,7 @@ The goal of this project was to display a quiz that allows the user to challenge
 
 ## Clone link for deployed application
 
-<img width="200px" src="./images/Screenshot_Coding_Quiz_REPO.png">click here
+<img width="300px" src="./images/Screenshot_Coding_Quiz_REPO.png">
 
 ## User Story
 
